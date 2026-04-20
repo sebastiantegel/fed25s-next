@@ -13,7 +13,7 @@ export default function Home() {
         {/* <ConditionalRendering /> */}
         {/* <ConditionalSpinner /> */}
         {/* <ListSimple /> */}
-        {/* <ListObject /> */}
+        <ListObject />
         <Cliffhanger />
       </main>
     </div>

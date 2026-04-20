@@ -13,7 +13,7 @@ export const ListObject = () => {
   return (
     <div className="flex justify-between w-full">
       {persons.map((p) => (
-        <div key={p.name}>
+        <div key={p.name} className="border border-amber-300 rounded-2xl p-4">
           <h3>{p.name}</h3>
           <p>{p.age}</p>
           <input type="checkbox" defaultChecked={p.isMarried} />
