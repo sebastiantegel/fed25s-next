@@ -37,13 +37,13 @@ export const StateList = () => {
   return (
     <>
       <button onClick={addPerson}>Lägg till</button>
-      <div>
+      <div className="flex w-full justify-around">
         {persons.map((p) => (
-          <div key={p.name}>
+          <div key={p.name} className="bg-[#c800ff] p-4 rounded">
             <h3>{p.name}</h3>
             <p>{p.age}</p>
             <input type="checkbox" defaultChecked={p.isMarried} disabled />
-            <div>
+            <div className="flex flex-col items-start">
               <button
                 onClick={() => {
                   removePerson(p.name);
