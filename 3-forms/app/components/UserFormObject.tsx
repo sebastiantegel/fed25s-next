@@ -2,6 +2,7 @@
 
 import { ChangeEvent, useState } from "react";
 import { User } from "../models/User";
+import { Person } from "@sebastiantegel/edutypes";
 
 export const UserFormObject = () => {
   const [user, setUser] = useState<User>(
@@ -30,6 +31,8 @@ export const UserFormObject = () => {
   const removeUser = (email: string) => {
     setUsers(users.filter((u) => u.email !== email));
   };
+
+  const p = new Person("Sebastian", 46, true);
 
   return (
     <>
