@@ -10,6 +10,31 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --animate-bounce-high: bounce-high 0.8s infinite;
+  --animate-dot-color: dot-color 0.8s infinite;
+
+  @keyframes bounce-high {
+    0%,
+    100% {
+      transform: translateY(0);
+      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+      transform: translateY(-0.75rem);
+      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+  }
+
+  @keyframes dot-color {
+    0%,
+    100% {
+      background-color: #6366f1;
+    }
+    50% {
+      background-color: #a78bfa;
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
