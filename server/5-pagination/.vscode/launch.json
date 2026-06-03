@@ -5,11 +5,34 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Launch Next.js dev server",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "npm run dev"
+    },
+    {
       "type": "msedge",
       "request": "launch",
-      "name": "Launch Edge against localhost",
-      "url": "http://localhost:8080",
+      "name": "Launch Edge (Next.js dev)",
+      "url": "http://localhost:3000",
       "webRoot": "${workspaceFolder}"
+    },
+    {
+      "type": "msedge",
+      "request": "attach",
+      "name": "Attach to Edge (9222)",
+      "port": 9222,
+      "webRoot": "${workspaceFolder}"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Next.js + Edge",
+      "configurations": [
+        "Launch Next.js dev server",
+        "Launch Edge (Next.js dev)"
+      ],
+      "stopAll": true
     }
   ]
 }

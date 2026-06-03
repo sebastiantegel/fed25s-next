@@ -11,10 +11,10 @@ export const Pagination = ({ numberOfMovies, q, page }: PaginationProps) => {
 
   return (
     <>
-      {page > 1 && <Link href={`/movies?q=${q}&page=${page - 1}`}>Back</Link>}{" "}
+      {page > 1 && <Link href={`/movies?q=${q}&page=${page - 1}`}>{"<-"}</Link>}
       {page} of {numberOfPages}
       {page < numberOfPages && (
-        <Link href={`/movies?q=${q}&page=${page + 1}`}>Forward</Link>
+        <Link href={`/movies?q=${q}&page=${page + 1}`}>{"->"}</Link>
       )}
     </>
   );
