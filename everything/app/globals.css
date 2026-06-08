@@ -5,11 +5,35 @@
   --foreground: #171717;
 }
 
+/* Theme colors */
+:root[data-theme="day"] {
+  --theme-color: #d946ef; /* fuchsia-700 */
+}
+
+:root[data-theme="night"] {
+  --theme-color: #fcd34d; /* amber-300 */
+}
+
+:root[data-theme="pink"] {
+  --theme-color: #ec4899; /* pink-500 */
+}
+
+:root[data-theme="purple"] {
+  --theme-color: #9333ea; /* purple-600 */
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-theme: var(--theme-color);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+}
+
+@layer utilities {
+  .bg-theme {
+    @apply bg-[var(--theme-color)];
+  }
 }
 
 @media (prefers-color-scheme: dark) {
