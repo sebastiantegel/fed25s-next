@@ -26,21 +26,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ThemeProvider>
-      <ThemeApplier />
-      <html
-        lang="en"
-        className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-      >
-        <body className="min-h-full flex flex-col">
-          <header>
-            <ThemeSelector />
-          </header>
-          <main>{children}</main>
+    <>
+      {/* 2. Här placerar vi vårt context, allt innehåll kan komma
+      åt contextet och värdet genom att använda useContext */}
+      <ThemeProvider>
+        <ThemeApplier />
+        <html
+          lang="en"
+          className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+        >
+          <body className="min-h-full flex flex-col">
+            <header>
+              <ThemeSelector />
+            </header>
+            <main>{children}</main>
 
-          <footer></footer>
-        </body>
-      </html>
-    </ThemeProvider>
+            <footer></footer>
+          </body>
+        </html>
+      </ThemeProvider>
+    </>
   );
 }

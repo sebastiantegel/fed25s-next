@@ -5,7 +5,12 @@ import { ThemeContext } from "../contexts/ThemeContext";
 import { themes } from "../models/Theme";
 
 export const ThemeSelector = () => {
-  const { currentTheme, dispatch } = useContext(ThemeContext);
+  // 3. Använd contextet. Detta ger oss ett objekt som innehåller:
+  // - currentTheme
+  // - dispatch
+
+  // Här tar vi bara emot dispatch
+  const { dispatch } = useContext(ThemeContext);
 
   return (
     <>
@@ -13,12 +18,14 @@ export const ThemeSelector = () => {
         {themes.map((t) => (
           <li
             key={t.value}
-            onClick={() =>
+            onClick={() => {
+              // Anropa dispatch för att ändra vårt state (currentTheme)
+              // till värdet (value) som finns i objektet t som är ett Theme
               dispatch({
                 type: "changeTheme",
                 payload: t.value,
-              })
-            }
+              });
+            }}
           >
             {t.name}
           </li>

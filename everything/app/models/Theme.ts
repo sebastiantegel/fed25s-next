@@ -1,8 +1,10 @@
+// Beskriv ett tema
 export type Theme = {
   name: string;
   value: string;
 };
 
+// Beskriv vilka teman som finns i vår applikation
 export const themes: Theme[] = [
   { name: "Day", value: "day" },
   { name: "Night", value: "night" },
